@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.custom.i18n.resources" value="app" />
+ 
+    <package name="default" extends="struts-default" namespace="/">
+    	<!-- The action behind the "Submit" button -->
+        <action name="enterItem" class="com.APP.struts2.input.inputAction">
+            <result name="success">Results.jsp</result>
+            <result name="error">Input.jsp</result>
+        </action>
+        <!-- The action behind the "Enter an item" button -->
+        <action name="goToInput" class="com.APP.struts2.results.resultsAction">
+            <result name="success">Input.jsp</result>
+        </action>
+    </package>
+</struts>
